@@ -1,5 +1,5 @@
 {
-  "homepage": "https://isakgmagnusson.github.io/Invitation/",
+  "homepage": "https://fatimatobias2026.github.io/fatimatobias2026/",
   "name": "inbjudan",
   "version": "0.1.0",
   "private": true,
@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "main -d build"
   },
   "eslintConfig": {
     "extends": [
