@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/Invitation/static/css/main.341e5f43.css",
-    "main.js": "/Invitation/static/js/main.4fd5306e.js",
-    "static/js/453.6b4a3355.chunk.js": "/Invitation/static/js/453.6b4a3355.chunk.js",
-    "static/media/MALGUNSL.TTF": "/Invitation/static/media/MALGUNSL.21c0b3319ba53ed9ec5e.TTF",
-    "static/media/epicflowerimage.png": "/Invitation/static/media/epicflowerimage.a11eadcda1bc0d94c1fd.png",
-    "static/media/timelinepic5.jpg": "/Invitation/static/media/timelinepic5.16182cace42548c502e5.jpg",
-    "static/media/timelinepic2.jpg": "/Invitation/static/media/timelinepic2.f3f0d4f1eb03267fe4d6.jpg",
-    "static/media/frontpage.jpg": "/Invitation/static/media/frontpage.5b4ef5ff11618cf9f0ef.jpg",
-    "static/media/timelinepic3.jpg": "/Invitation/static/media/timelinepic3.385fe1bb7f9a058376ec.jpg",
-    "static/media/coolhalopicture.jpg": "/Invitation/static/media/coolhalopicture.89c6f5cf3f364fa7ff87.jpg",
-    "static/media/vigselbild.jpg": "/Invitation/static/media/vigselbild.d94f8db6e2a146a88a12.jpg",
-    "static/media/timelinepic6.jpg": "/Invitation/static/media/timelinepic6.e743d4b58f0419bbd324.jpg",
-    "static/media/fikabild.jpg": "/Invitation/static/media/fikabild.43604dda48ac762f3300.jpg",
-    "static/media/timelinepic4.jpg": "/Invitation/static/media/timelinepic4.9786237c0a5641557c7b.jpg",
-    "static/media/timelinepic1.jpg": "/Invitation/static/media/timelinepic1.2a68b03d7337cdb2b994.jpg",
-    "index.html": "/Invitation/index.html",
-    "main.341e5f43.css.map": "/Invitation/static/css/main.341e5f43.css.map",
-    "main.4fd5306e.js.map": "/Invitation/static/js/main.4fd5306e.js.map",
-    "453.6b4a3355.chunk.js.map": "/Invitation/static/js/453.6b4a3355.chunk.js.map"
+    "main.css": "/fatimatobias2026/static/css/main.27f173b0.css",
+    "main.js": "/fatimatobias2026/static/js/main.569b9e85.js",
+    "static/js/453.6b4a3355.chunk.js": "/fatimatobias2026/static/js/453.6b4a3355.chunk.js",
+    "static/media/MALGUNSL.TTF": "/fatimatobias2026/static/media/MALGUNSL.21c0b3319ba53ed9ec5e.TTF",
+    "static/media/epicflowerimage.png": "/fatimatobias2026/static/media/epicflowerimage.a11eadcda1bc0d94c1fd.png",
+    "static/media/timelinepic5.jpg": "/fatimatobias2026/static/media/timelinepic5.16182cace42548c502e5.jpg",
+    "static/media/timelinepic2.jpg": "/fatimatobias2026/static/media/timelinepic2.f3f0d4f1eb03267fe4d6.jpg",
+    "static/media/frontpage.jpg": "/fatimatobias2026/static/media/frontpage.5b4ef5ff11618cf9f0ef.jpg",
+    "static/media/timelinepic3.jpg": "/fatimatobias2026/static/media/timelinepic3.385fe1bb7f9a058376ec.jpg",
+    "static/media/coolhalopicture.jpg": "/fatimatobias2026/static/media/coolhalopicture.89c6f5cf3f364fa7ff87.jpg",
+    "static/media/vigselbild.jpg": "/fatimatobias2026/static/media/vigselbild.d94f8db6e2a146a88a12.jpg",
+    "static/media/timelinepic6.jpg": "/fatimatobias2026/static/media/timelinepic6.e743d4b58f0419bbd324.jpg",
+    "static/media/fikabild.jpg": "/fatimatobias2026/static/media/fikabild.43604dda48ac762f3300.jpg",
+    "static/media/timelinepic4.jpg": "/fatimatobias2026/static/media/timelinepic4.9786237c0a5641557c7b.jpg",
+    "static/media/timelinepic1.jpg": "/fatimatobias2026/static/media/timelinepic1.2a68b03d7337cdb2b994.jpg",
+    "index.html": "/fatimatobias2026/index.html",
+    "main.27f173b0.css.map": "/fatimatobias2026/static/css/main.27f173b0.css.map",
+    "main.569b9e85.js.map": "/fatimatobias2026/static/js/main.569b9e85.js.map",
+    "453.6b4a3355.chunk.js.map": "/fatimatobias2026/static/js/453.6b4a3355.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.341e5f43.css",
-    "static/js/main.4fd5306e.js"
+    "static/css/main.27f173b0.css",
+    "static/js/main.569b9e85.js"
   ]
 }
