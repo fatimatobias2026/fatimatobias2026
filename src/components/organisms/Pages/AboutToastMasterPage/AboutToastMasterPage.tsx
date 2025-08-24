@@ -1,4 +1,3 @@
-import WeddingdayLine from "../../../atoms/WeddingdayLine";
 import text from "./text.json";
 const fikabild = require("../../../../assets/pictures/fikabild.jpg");
 
