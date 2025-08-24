@@ -1,0 +1,575 @@
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
+
+@font-face {
+  font-family: "MALGUN";
+  src: local("MALGUN"), url("./assets/fonts/MALGUNSL.TTF") format("opentype");
+}
+
+.headertext-welcome {
+  font-family: "Pinyon Script", cursive;
+  font-weight: normal;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  margin-top: 3%;
+}
+
+.headertext-name {
+  font-weight: normal;
+  font-size: 3.5rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.headertext-date {
+  font-weight: normal;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.App {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.flower-and-header {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.img-flower {
+  position: absolute;
+  width: 22%;
+}
+
+.HeaderBox {
+  display: flex;
+  background-color: #f5ece5;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin-top: 3%;
+}
+
+.Header {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.HeaderButtons {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.header-line {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 3px solid #ccc;
+  margin: 1em 0;
+  width: 100%;
+  margin-top: 6%;
+}
+
+.weddingday-line {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 3em 0;
+  width: 100%;
+}
+
+.MainPage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f5ece5;
+}
+
+.PageBox {
+  margin-top: 3%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5ece5;
+}
+
+.page-top-header {
+  font-family: "Pinyon Script";
+  font-weight: normal;
+  font-size: 2.5rem;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: grid;
+  grid-auto-flow: row;
+  border-style: solid;
+  border-color: #ff00ff;
+  border-width: 4px;
+}
+
+.flip-card-front {
+  background-color: #a3b19b;
+  color: whitesmoke;
+}
+
+.flip-card-back {
+  background-color: rgb(93, 153, 187);
+  color: whitesmoke;
+
+  transform: rotateY(180deg);
+}
+
+.TextGroup {
+  line-height: 0.8;
+}
+
+.MenuButton {
+  flex: 1;
+  font-size: medium;
+  border-width: 0px;
+  background-color: #f5ece5;
+  font-family: "MALGUN";
+}
+
+.MenuButton-selected {
+  flex: 1;
+  background-color: #f5ece5;
+  font-size: medium;
+  border-width: 0px;
+  font-weight: bolder;
+  font-family: "MALGUN";
+}
+
+.MenuButton:hover {
+  background-color: #efe3db; /*#e7d9ce;  https://meyerweb.com/eric/tools/color-blend/#F5ECE5:E7D9CE:10:hex*/
+  cursor: pointer;
+}
+
+.welcome-page {
+  width: 50%;
+  height: 60%;
+}
+
+.notice-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  height: 60%;
+}
+
+.notice-form {
+  border-width: 3px;
+  border-style: solid;
+  border-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  align-items: center;
+  width: 70%;
+  background-color: #f7e7db;
+  margin-top: 3%;
+}
+
+.form-section {
+  border-width: 3px;
+  border-style: solid;
+  border-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+
+  margin-bottom: 1rem;
+  align-items: flex-start;
+  width: 90%;
+  background-color: #fdf4ed;
+}
+
+.form-textinput {
+  margin-left: 1rem;
+
+  margin-bottom: 1rem;
+
+  line-height: 30px;
+  font-size: large;
+  width: 90%;
+}
+
+.InputWithLabel {
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  align-items: flex-start;
+  font-weight: bold;
+}
+
+.form-header {
+  font-weight: bold;
+  font-size: medium;
+  line-height: 1.2;
+  padding-left: 1rem;
+}
+
+.form-radiobuttons-section {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.radiobuttons-box {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+  border-bottom: none;
+  width: 100%;
+}
+
+.form-radiobuttons {
+  margin: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.form-textarea {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  font-size: large;
+
+  width: 90%;
+  height: 100px;
+  resize: none;
+}
+
+.weddingday-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 60%;
+}
+
+.weddingday-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+  text-align: left;
+}
+
+.weddingday-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.weddingday-image {
+  display: flex;
+  margin-right: 1rem;
+  height: 100%;
+  margin-top: 0px;
+  padding: 0px;
+  height: 150px;
+}
+
+.standard-header {
+  font-weight: BOLD;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: "MALGUN";
+  margin-bottom: 0.8em;
+}
+
+.standard-text {
+  margin-bottom: 0;
+  padding: 0;
+  font-family: "MALGUN";
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.standard-text-no-margins {
+  margin: 0;
+  padding: 0;
+  font-family: "MALGUN";
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.link-button {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+
+  margin: 0;
+  padding: 0;
+  font-family: "MALGUN";
+
+  font-size: medium;
+}
+
+.countdown {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5ece5;
+  padding-top: 5%;
+}
+
+.timer-line {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid #ccc;
+  width: 50%;
+  margin-bottom: 1%;
+}
+
+.countdown .content {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: space-between;
+  background-color: #f5ece5;
+  margin-bottom: 3%;
+}
+.countdown h2 {
+  font-size: xx-large;
+  margin: 0;
+  font-family: "MALGUN";
+  background-color: #f5ece5;
+}
+
+.countdown .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 150px;
+  background-color: #f5ece5;
+}
+
+.countdown .value {
+  margin: 0;
+  padding: 0;
+  font-family: "MALGUN";
+  font-size: xx-large;
+}
+
+.countdown .label {
+  margin: 0;
+  padding: 0;
+  font-family: "MALGUN";
+  font-size: large;
+}
+
+.timeline {
+  width: 50%;
+  margin: 20px auto;
+  position: relative;
+}
+.timeline:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin: 0 0 0 -1px;
+  width: 2px;
+  height: 100%;
+  background: rgba(185, 0, 0, 0.2);
+}
+.timeline .timeline-item {
+  width: 100%;
+  margin: 0 0 20px 0;
+  position: relative;
+}
+.timeline .timeline-item:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.timeline .timeline-item .inner {
+  width: 40%;
+  float: left;
+  margin: 5px 0 0 0;
+  border-radius: 6px;
+}
+.timeline .timeline-item .inner .date {
+  display: block;
+  /* width: 60px; */
+  /*  height: 50px;*/
+  height: 15px;
+  width: 25px;
+
+  padding: 5px 0;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  /*margin: 0 0 0 -32px;*/
+  margin: 5px 0 0 -15px;
+  border-radius: 100%;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: #25303b;
+  color: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 7px #25303b;
+}
+.timeline .timeline-item .inner .date {
+  display: block;
+  text-align: center;
+}
+
+.timeline .timeline-item .inner .date .month {
+  font-size: 18px;
+}
+.timeline .timeline-item .inner .date .year {
+  font-size: 10px;
+}
+.timeline .timeline-item .inner h2 {
+  padding: 15px;
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  border-radius: 6px 6px 0 0;
+  position: relative;
+}
+.timeline .timeline-item .inner h2:after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  scale: 3;
+
+  -webkit-transform: rotate(-45deg);
+}
+.timeline .timeline-item .inner p {
+  padding: 15px;
+  margin: 0;
+  background: #f5ece5;
+  color: #656565;
+  border-radius: 0 0 6px 6px;
+  border: 1px solid rgb(192, 111, 34);
+}
+
+.timeline .timeline-item:nth-child(2n + 2) .inner {
+  float: right;
+}
+.timeline .timeline-item:nth-child(2n + 2) .inner h2:after {
+  left: -5px;
+}
+
+.timeline .timeline-item:nth-child(1) .inner h2 {
+  background: #e74c3c;
+}
+.timeline .timeline-item:nth-child(1) .inner h2:after {
+  background: #e74c3c;
+}
+.timeline .timeline-item:nth-child(2) .inner h2 {
+  background: #2ecc71;
+}
+.timeline .timeline-item:nth-child(2) .inner h2:after {
+  background: #2ecc71;
+}
+.timeline .timeline-item:nth-child(3) .inner h2 {
+  background: #e67e22;
+}
+.timeline .timeline-item:nth-child(3) .inner h2:after {
+  background: #e67e22;
+}
+.timeline .timeline-item:nth-child(4) .inner h2 {
+  background: #1abc9c;
+}
+.timeline .timeline-item:nth-child(4) .inner h2:after {
+  background: #1abc9c;
+}
+.timeline .timeline-item:nth-child(5) .inner h2 {
+  background: #9b59b6;
+}
+.timeline .timeline-item:nth-child(5) .inner h2:after {
+  background: #9b59b6;
+}
+
+.timeline .timeline-item:nth-child(6) .inner h2 {
+  background: #a2b659;
+}
+.timeline .timeline-item:nth-child(6) .inner h2:after {
+  background: #a2b659;
+}
+
+.timeline .timeline-item:nth-child(7) .inner h2 {
+  background: #e74c3c;
+}
+.timeline .timeline-item:nth-child(7) .inner h2:after {
+  background: #e74c3c;
+}
+
+.timeline-image {
+  width: 100%;
+  height: auto;
+}
