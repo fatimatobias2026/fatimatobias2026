@@ -1,8 +1,8 @@
 import { useState } from "react";
-import FormHeader from "../atoms/Form/FormHeader";
-import FormRadioButtons from "../atoms/Form/FormRadioButtons";
-import FormTextArea from "../atoms/Form/FormTextArea";
-import FormTextInput from "../atoms/Form/FormTextInput";
+import FormContent from "./FormContent";
+import { FormContentDto } from "./FormContentDto";
+import React from "react";
+import useIsMobile from "../../hooks/useIsMobile";
 
 const NoticeForm = () => {
   interface acceptance {
@@ -13,31 +13,33 @@ const NoticeForm = () => {
     song: string;
     transport: string;
   }
+
   const handlePost = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const target = event.target as typeof event.target & {
-      name: { value: string };
-      isComing: { value: string };
-      allergies: { value: string };
-      song: { value: string };
-      transport: { value: string };
-    };
     const date = new Date();
-
-    if (target.name.value === "" || isComing === "") {
-      alert("Ge all info");
-      return;
-    }
     const APP_ID =
       "AKfycbx5auii34v2lN8FNR6jKHvBpb4d7rvXJedc9T9pOCTiTnoI9btDUzHE_zte6t2iD-aC";
     const baseURL = `https://script.google.com/macros/s/${APP_ID}/exec`;
-    const formData = new FormData();
 
-    if (isComing === "no") {
-      try {
+    let formDataList: Array<FormData> = [];
+    let allFieldsCorrect = true;
+
+    forms.forEach((form) => {
+      const formData = new FormData();
+
+      if (form.isDeleted) {
+        return;
+      }
+
+      if (form.name === "" || form.isComing === "") {
+        setMissedFields("Hoppsan, du verkar ha missat ett fält :)");
+        allFieldsCorrect = false;
+        return;
+      }
+      if (form.isComing === "no") {
         const inputValue: acceptance = {
-          name: target.name.value,
-          isComing: isComing,
+          name: form.name,
+          isComing: "nej",
           allergies: "-",
           song: "-",
           transport: "-",
@@ -46,121 +48,210 @@ const NoticeForm = () => {
         Object.keys(inputValue).forEach((key) => {
           formData.append(key, inputValue[key as keyof acceptance]);
         });
-        const res = await fetch(baseURL, {
-          method: "POST",
-          body: formData,
-        });
-        if (res.ok) {
-          alert("Worked no");
 
-          console.log("Request was successful:", res);
-        } else {
-          alert("Failed");
-          console.log("Request Failed:", res);
+        formDataList.push(formData);
+      }
+
+      if (form.isComing === "yes") {
+        if (
+          form.allergies === "" ||
+          form.song === "" ||
+          form.transport === ""
+        ) {
+          setMissedFields("Hoppsan, du verkar ha missat ett fält :)");
+          allFieldsCorrect = false;
+          return;
         }
-      } catch (e) {
-        alert("Failed");
+        const inputValue: acceptance = {
+          name: form.name,
+          isComing: form.isComing,
+          allergies: form.allergies ?? "",
+          song: form.song ?? "",
+          transport: form.transport ?? "",
+          sent: date.toLocaleString(),
+        };
 
-        console.error("Error during fetch:", e);
+        Object.keys(inputValue).forEach((key) => {
+          formData.append(key, inputValue[key as keyof acceptance]);
+        });
+
+        formDataList.push(formData);
       }
-    }
-    if (isComing === "yes") {
-      if (
-        target.allergies.value === "" ||
-        target.song.value === "" ||
-        target.transport.value === ""
-      ) {
-        alert("Ge all info");
-        return;
-      }
-      const inputValue: acceptance = {
-        name: target.name.value,
-        isComing: isComing,
-        allergies: target.allergies.value,
-        song: target.song.value,
-        transport: target.transport.value,
-        sent: date.toLocaleString(),
-      };
-      Object.keys(inputValue).forEach((key) => {
-        formData.append(key, inputValue[key as keyof acceptance]);
+    });
+
+    if (allFieldsCorrect) {
+      formDataList.forEach(async (formData) => {
+        try {
+          const res = await fetch(baseURL, {
+            method: "POST",
+            body: formData,
+          });
+          if (res.ok) {
+            console.log("Request was successful:", res);
+          } else {
+            console.log("Request Failed:", res);
+            setMissedFields("Nått gick fel :( Testa igen! :)");
+
+            return;
+          }
+        } catch (e) {
+          setMissedFields("Nått gick fel :( Testa igen! :)");
+          return;
+        }
       });
-
-      try {
-        const res = await fetch(baseURL, {
-          method: "POST",
-          body: formData,
-        });
-        if (res.ok) {
-          alert("Worked yes");
-
-          console.log("Request was successful:", res);
-        } else {
-          alert("Failed");
-          console.log("Request Failed:", res);
-        }
-      } catch (e) {
-        alert("Failed");
-
-        console.error("Error during fetch:", e);
-      }
+      setReplyDone(true);
     }
   };
+
+  const [missedFields, setMissedFields] = useState<string>("");
+  const [counter, setCounter] = useState<number>(1);
+  const [replyDone, setReplyDone] = useState<boolean>(false);
+
+  const [forms, setForms] = useState<FormContentDto[]>([
+    {
+      isDeleted: false,
+      id: 0,
+      name: "",
+      isComing: "",
+      allergies: "",
+      song: "",
+      transport: "",
+    },
+  ]);
 
   const todo = () => {
-    alert("todo: fixa funktionalitet");
+    setCounter((counter) => counter + 1);
+    setForms(
+      forms.concat({
+        isDeleted: false,
+        id: counter,
+        name: "",
+        isComing: "",
+        allergies: "",
+        song: "",
+        transport: "",
+      })
+    );
   };
 
-  const [isComing, setIsComing] = useState("");
+  //https://stackoverflow.com/questions/57912426/use-dynamically-created-react-components-and-fill-with-state-values
+  const onChangeName = (id: any, name: any) => {
+    setForms((form) => {
+      return form.map((item) => {
+        if (item.id === id) {
+          return { ...item, name };
+        }
+        return item;
+      });
+    });
+  };
+
+  const onChangeIsDeleted = (id: any, isDeleted: any) => {
+    setForms((form) => {
+      return form.map((item) => {
+        if (item.id === id) {
+          return { ...item, isDeleted };
+        }
+        return item;
+      });
+    });
+  };
+
+  const onChangeIsComing = (id: any, isComing: any) => {
+    setForms((form) => {
+      return form.map((item) => {
+        if (item.id === id) {
+          return { ...item, isComing };
+        }
+        return item;
+      });
+    });
+  };
+
+  const onChangeAllergies = (id: any, allergies: any) => {
+    setForms((form) => {
+      return form.map((item) => {
+        if (item.id === id) {
+          return { ...item, allergies };
+        }
+        return item;
+      });
+    });
+  };
+
+  const onChangeSong = (id: any, song: any) => {
+    setForms((form) => {
+      return form.map((item) => {
+        if (item.id === id) {
+          return { ...item, song };
+        }
+        return item;
+      });
+    });
+  };
+
+  const onChangeTransport = (id: any, transport: any) => {
+    setForms((form) => {
+      return form.map((item) => {
+        if (item.id === id) {
+          return { ...item, transport };
+        }
+        return item;
+      });
+    });
+  };
+
+  const isMobile = useIsMobile();
 
   return (
-    <form className="notice-form" onSubmit={handlePost}>
-      <div className="form-section">
-        <FormHeader text="Namn" />
-        <FormTextInput name="name" />
-      </div>
-      <div className="form-section">
-        <div className="form-radiobuttons-section">
-          <FormHeader text="Kommer du?" />
-          <div className="radiobuttons-box">
-            <FormRadioButtons
-              label="Ja, såklart!"
-              value="yes"
-              setIsComing={setIsComing}
-            />
-          </div>
-          <div className="radiobuttons-box">
-            <FormRadioButtons
-              label="Nej, tyvärr!"
-              value="no"
-              setIsComing={setIsComing}
-            />
-          </div>
+    <>
+      {isMobile ? (
+        <div>
+          <p style={{ fontWeight: "bolder" }}>
+            O.S.A.-Formulär kan endast nås via dator
+          </p>
         </div>
-      </div>
-      {isComing === "yes" && (
+      ) : (
         <>
-          <div className="form-section">
-            <FormHeader text="Ange eventuella allergier och specialkost, skriv nej om du inte har några" />
-            <FormTextArea name="allergies" />
-          </div>
+          {!replyDone ? (
+            <form className="notice-form" onSubmit={handlePost}>
+              {forms
+                .filter((form) => !form.isDeleted)
+                .map((form) => {
+                  return (
+                    <FormContent
+                      forms={forms}
+                      key={form.id}
+                      id={form.id}
+                      isComing={form.isComing}
+                      onChangeName={onChangeName}
+                      onChangeIsDeleted={onChangeIsDeleted}
+                      onChangeIsComing={onChangeIsComing}
+                      onChangeAllergies={onChangeAllergies}
+                      onChangeSong={onChangeSong}
+                      onChangeTransport={onChangeTransport}
+                    />
+                  );
+                })}
 
-          <div className="form-section">
-            <FormHeader text="En låt jag absolut inte kan sitta still till…" />
-            <FormTextArea name="song" />
-          </div>
-
-          <div className="form-section">
-            <FormHeader text="Jag kommer ta bil och vill ta med mig fler bröllopsgäster eller skulle vilja samåka med någon som har bil." />
-            <FormTextArea name="transport" />
-          </div>
-
-          <button type="button" onClick={todo}>
-            +Lägg till person
-          </button>
+              <button type="button" onClick={todo} className="form-button">
+                +Lägg till person
+              </button>
+              <button type="submit" className="form-button">
+                Svara
+              </button>
+              {missedFields != "" && (
+                <div>
+                  <p>{missedFields}</p>
+                </div>
+              )}
+            </form>
+          ) : (
+            <p>Tack för svar!</p>
+          )}
         </>
       )}
-      <button type="submit">Svara</button>
-    </form>
+    </>
   );
 };
 

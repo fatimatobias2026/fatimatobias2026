@@ -6,6 +6,7 @@ import WeddingdayPage from "./WeddingdayPage/WeddingdayPage";
 import AboutUsPage from "./AboutUsPage/AboutUsPage";
 import SitePage from "./SitePage/SitePage";
 import AboutToastMasterPage from "./AboutToastMasterPage/AboutToastMasterPage";
+import { useRef } from "react";
 
 type PageProps = {
   page: number;

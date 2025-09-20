@@ -1,15 +1,17 @@
+import useIsMobile from "../../hooks/useIsMobile";
 import useTimer from "../../hooks/useTimer";
 import HeaderLine from "../atoms/HeaderLine";
 import TimerLine from "../atoms/TimerLine";
 
 const Countdown = () => {
-  const { timeLeft } = useTimer(new Date("2026-05-18T14:00:00"));
+  const { timeLeft } = useTimer(new Date("2026-05-30T15:30:00"));
+  const isMobile = useIsMobile();
 
   return (
     <div className="countdown">
       <TimerLine />
       <h1 className="page-top-header">Bröllopsdag om</h1>
-      <div className="content">
+      <div className={isMobile ? "content-mobile" : "content-desktop"}>
         {Object.entries(timeLeft).map((el) => {
           const label = el[0];
           const value = el[1];

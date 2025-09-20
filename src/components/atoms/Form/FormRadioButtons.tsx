@@ -1,21 +1,29 @@
 type FormRadioButtonsProps = {
   label: string;
   value: string;
-  setIsComing: (value: string) => void;
+  onChangeValue: any;
+  name: string;
+  id: number;
 };
 
 const FormRadioButtons = ({
+  id,
   label,
   value,
-  setIsComing,
+  onChangeValue,
+  name
 }: FormRadioButtonsProps) => {
+
+  const onChange = (e: any) => {
+    onChangeValue(id, value);
+  };
+
   return (
     <label className="form-radiobuttons">
       <input
         type="radio"
-        name="isComing"
-        value={value}
-        onChange={() => setIsComing(value)}
+        name={name}
+        onChange={() => onChange(value)}
       />
       {label}
     </label>

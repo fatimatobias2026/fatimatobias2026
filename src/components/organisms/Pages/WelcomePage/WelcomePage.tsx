@@ -1,3 +1,4 @@
+import useIsMobile from "../../../../hooks/useIsMobile";
 import FakeLinkButton from "../../../atoms/FakeLinkButton";
 import text from "./text.json";
 
@@ -8,9 +9,15 @@ type WelcomePageProps = {
 };
 
 const WelcomePage = ({ setPageValue }: WelcomePageProps) => {
+  const isMobile = useIsMobile();
+
   return (
     <div className="welcome-page">
-      <img src={splashImg} />
+      {!isMobile && (
+        <>
+          <img src={splashImg} />
+        </>
+      )}
       <h1 className="page-top-header">{text.header}</h1>
       <p className="standard-text">{text.text1}</p>
       <p className="standard-text">{text.text2}</p>

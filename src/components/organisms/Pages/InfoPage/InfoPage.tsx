@@ -10,9 +10,7 @@ const InfoPage = ({ setPageValue }: InfoPageProps) => {
   return (
     <div className="weddingday-page">
       <h1 className="page-top-header">{text.header}</h1>
-
       <div className="weddingday-section">
-        <></>
         <div className="weddingday-text">
           <h3 className="standard-header">{text.header1}</h3>
           <p className="standard-text">{text.text1}</p>
@@ -21,7 +19,6 @@ const InfoPage = ({ setPageValue }: InfoPageProps) => {
       <WeddingdayLine />
 
       <div className="weddingday-section">
-        <></>
         <div className="weddingday-text">
           <h3 className="standard-header">{text.header2}</h3>
           <p className="standard-text">{text.text2}</p>
@@ -30,7 +27,6 @@ const InfoPage = ({ setPageValue }: InfoPageProps) => {
       <WeddingdayLine />
 
       <div className="weddingday-section">
-        <></>
         <div className="weddingday-text">
           <h3 className="standard-header">{text.header3}</h3>
           <p className="standard-text">
@@ -48,7 +44,6 @@ const InfoPage = ({ setPageValue }: InfoPageProps) => {
       <WeddingdayLine />
 
       <div className="weddingday-section">
-        <></>
         <div className="weddingday-text">
           <h3 className="standard-header">{text.header4}</h3>
           <p className="standard-text">{text.text5}</p>
@@ -66,7 +61,6 @@ const InfoPage = ({ setPageValue }: InfoPageProps) => {
       <WeddingdayLine />
 
       <div className="weddingday-section">
-        <></>
         <div className="weddingday-text">
           <h3 className="standard-header">{text.header5}</h3>
           <p className="standard-text">
@@ -83,7 +77,6 @@ const InfoPage = ({ setPageValue }: InfoPageProps) => {
       <WeddingdayLine />
 
       <div className="weddingday-section">
-        <></>
         <div className="weddingday-text">
           <h3 className="standard-header">{text.header6}</h3>
           <p className="standard-text">{text.text8}</p>
@@ -92,11 +85,17 @@ const InfoPage = ({ setPageValue }: InfoPageProps) => {
       <WeddingdayLine />
 
       <div className="weddingday-section">
-        <></>
         <div className="weddingday-text">
           <h3 className="standard-header">{text.header7}</h3>
           <p className="standard-text">{text.text9}</p>
           <p className="standard-text">{text.text10}</p>
+        </div>
+      </div>
+      <WeddingdayLine />
+      <div className="weddingday-section">
+        <div className="weddingday-text">
+          <h3 className="standard-header">{text.header8}</h3>
+          <p className="standard-text">{text.text12}</p>
         </div>
       </div>
     </div>

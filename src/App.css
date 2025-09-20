@@ -92,6 +92,50 @@
   width: 100%;
 }
 
+.hamburger {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  z-index: 10;
+}
+
+.burger {
+  width: 2rem;
+  height: 0.25rem;
+  border-radius: 10px;
+  background-color: black;
+  transform-origin: 1px;
+  transition: all 0.3s linear;
+}
+
+.closed .burger1 {
+  transform: "rotate(0)";
+}
+
+.open .burger1 {
+  transform: "rotate(45deg)";
+}
+
+.open .burger2 {
+  transform: "translateX(100%)";
+  opacity: 0;
+}
+
+.closed .burger2 {
+  transform: "translateX(0)";
+  opacity: 1;
+}
+
+.open .burger3 {
+  transform: "rotate(-45deg)";
+}
+
+.closed .burger3 {
+  transform: "rotate(0)";
+}
+
 .MainPage {
   position: absolute;
   width: 100%;
@@ -201,7 +245,7 @@
 }
 
 .notice-form {
-  border-width: 3px;
+  border-width: 5px;
   border-style: solid;
   border-color: #ccc;
   display: flex;
@@ -211,6 +255,21 @@
   width: 70%;
   background-color: #f7e7db;
   margin-top: 3%;
+}
+
+.form-person {
+  width: 90%;
+  height: auto;
+  border-width: 3px;
+  border-style: dashed;
+  border-color: #ccc;
+  margin-top: 1rem;
+
+  margin-bottom: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-section {
@@ -284,6 +343,23 @@
   width: 90%;
   height: 100px;
   resize: none;
+}
+
+.form-button {
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+
+.button-disabled {
+  background-color: #ffabab;
+}
+
+.button-remove {
+  background-color: #ff0000;
+}
+
+.button-remove:hover {
+  background-color: #ff5151;
 }
 
 .weddingday-page {
@@ -383,7 +459,7 @@
   margin-bottom: 1%;
 }
 
-.countdown .content {
+.content-desktop {
   width: 30%;
   display: flex;
   flex-direction: row;
@@ -392,6 +468,16 @@
   background-color: #f5ece5;
   margin-bottom: 3%;
 }
+
+.content-mobile {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f5ece5;
+  margin-bottom: 3%;
+}
+
 .countdown h2 {
   font-size: xx-large;
   margin: 0;
@@ -454,6 +540,12 @@
   margin: 5px 0 0 0;
   border-radius: 6px;
 }
+
+.timeline-item-content {
+  display: flex;
+  flex-direction: row;
+}
+
 .timeline .timeline-item .inner .date {
   display: block;
   /* width: 60px; */
@@ -572,4 +664,87 @@
 .timeline-image {
   width: 100%;
   height: auto;
+}
+
+.burger-button {
+  position: absolute;
+  top: 3%;
+  left: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.burger-item {
+  width: 2rem;
+  height: 0.25rem;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+  background-color: gray;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60%;
+  width: 100%;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+  background-color: gray;
+}
+
+.menu-line {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  width: 100%;
+}
+
+.isopen {
+  transform: translateX(0);
+}
+
+.isclosed {
+  transform: translateX(-100%);
+}
+
+.first-open {
+  transform: rotate(45deg);
+}
+
+.first-closed {
+  transform: rotate(0);
+}
+
+.second-open {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.second-closed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.third-open {
+  transform: rotate(-45deg);
+}
+
+.third-closed {
+  transform: rotate(0);
 }
