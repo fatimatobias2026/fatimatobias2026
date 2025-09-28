@@ -17,6 +17,7 @@ const Timeline = () => {
         }
         header={"November 2022"}
         imagePath={timelinepic6}
+        isLeft={true}
       />
       <TimelineItem
         text={
@@ -24,6 +25,7 @@ const Timeline = () => {
         }
         header={"Sommaren 2023"}
         imagePath={timelinepic5}
+        isLeft={false}
       />
       <TimelineItem
         text={
@@ -31,6 +33,7 @@ const Timeline = () => {
         }
         header={"Hösten 2023"}
         imagePath={timelinepic4}
+        isLeft={true}
       />
       <TimelineItem
         text={
@@ -38,6 +41,7 @@ const Timeline = () => {
         }
         header={"År 2024"}
         imagePath={timelinepic3}
+        isLeft={false}
       />
       <TimelineItem
         text={
@@ -45,6 +49,7 @@ const Timeline = () => {
         }
         header={"30 maj 2025"}
         imagePath={timelinepic2}
+        isLeft={true}
       />
       <TimelineItem
         text={
@@ -52,11 +57,13 @@ const Timeline = () => {
         }
         header={"Sommaren 2025"}
         imagePath={timelinepic1}
+        isLeft={false}
       />
       <TimelineItem
         text={"Fatima och Tobias gifter sig…"}
-        header={"aa bb cc"}
+        header={"30 maj 2026"}
         imagePath={timelinepic0}
+        isLeft={true}
       />
     </div>
   );

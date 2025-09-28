@@ -12,13 +12,14 @@ const WelcomePage = ({ setPageValue }: WelcomePageProps) => {
   const isMobile = useIsMobile();
 
   return (
-    <div className="welcome-page">
+    <div className={isMobile ? "welcome-page-mobile" : "welcome-page"}>
       {!isMobile && (
         <>
           <img src={splashImg} />
         </>
       )}
       <h1 className="page-top-header">{text.header}</h1>
+      <p className="standard-text bold">{text.text8}</p>
       <p className="standard-text">{text.text1}</p>
       <p className="standard-text">{text.text2}</p>
       <p className="standard-text">{text.text3}</p>

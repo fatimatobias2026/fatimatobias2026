@@ -11,7 +11,7 @@ const NoticePage = () => {
       {isMobile && (
         <div>
           <p style={{ fontWeight: "bolder" }}>
-            O.S.A.-Formulär kan endast nås via dator
+            OSA-Formulär kan endast nås via dator
           </p>
         </div>
       )}

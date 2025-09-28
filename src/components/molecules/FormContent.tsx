@@ -42,11 +42,7 @@ const FormContent = ({
   return (
     <div className="form-person">
       <button
-        className={
-          nDeleted() < 2
-            ? "form-button button-disabled"
-            : "form-button button-remove"
-        }
+        className={nDeleted() < 2 ? "button-disabled" : "button-remove"}
         disabled={nDeleted() < 2}
         type="button"
         onClick={onChange}

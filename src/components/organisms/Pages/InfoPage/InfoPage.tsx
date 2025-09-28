@@ -1,3 +1,4 @@
+import useIsMobile from "../../../../hooks/useIsMobile";
 import FakeLinkButton from "../../../atoms/FakeLinkButton";
 import WeddingdayLine from "../../../atoms/WeddingdayLine";
 import text from "./text.json";
@@ -7,8 +8,10 @@ type InfoPageProps = {
 };
 
 const InfoPage = ({ setPageValue }: InfoPageProps) => {
+  const isMobile = useIsMobile();
+
   return (
-    <div className="weddingday-page">
+    <div className={isMobile ? "weddingday-page-mobile" : "weddingday-page"}>
       <h1 className="page-top-header">{text.header}</h1>
       <div className="weddingday-section">
         <div className="weddingday-text">
@@ -30,13 +33,10 @@ const InfoPage = ({ setPageValue }: InfoPageProps) => {
         <div className="weddingday-text">
           <h3 className="standard-header">{text.header3}</h3>
           <p className="standard-text">
-            {text.text3}
-            <FakeLinkButton
-              label={text.linkword1}
-              onClick={() => setPageValue(5)}
-              pageValue={5}
-            />
-            .{/* TODO: fix dot */}
+            {text.text3}{" "}
+            <a href="https://boka.naasfabriker.se/campaign/campaign-details?channelId=cbdba692-5261-4370-819c-78ac6d95fb77&sessionId=059d31c1-615f-4461-87f8-e5a81f9c9641&campaignId=766a88c3-bec1-44a1-a269-c03f544a3662&langId=1&promoCode=FatimaTobias2026&currency=SEK">
+              {text.linkword2}
+            </a>
           </p>
           <p className="standard-text">{text.text4}</p>
         </div>
@@ -47,15 +47,7 @@ const InfoPage = ({ setPageValue }: InfoPageProps) => {
         <div className="weddingday-text">
           <h3 className="standard-header">{text.header4}</h3>
           <p className="standard-text">{text.text5}</p>
-          <p className="standard-text">
-            {text.text6}
-            <FakeLinkButton
-              label={text.linkword1}
-              onClick={() => setPageValue(5)}
-              pageValue={5}
-            />
-            {text.text11}
-          </p>
+          <p className="standard-text">{text.text6}</p>
         </div>
       </div>
       <WeddingdayLine />

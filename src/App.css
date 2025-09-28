@@ -35,17 +35,53 @@
   text-align: center;
   width: 100%;
   height: 100%;
+  background-color: #f5ece5;
 }
 
 .flower-and-header {
+  position: relative;
+  min-height: fit-content;
   display: flex;
   width: 100%;
   flex-direction: row;
+  background-color: #f5ece5;
+  overflow-x: hidden;
 }
 
-.img-flower {
-  position: absolute;
-  width: 22%;
+.flowers {
+  height: 150px;
+  overflow-x: hidden;
+}
+
+.flowers.top.right {
+  transform: rotate(190deg) scaleX(-1.1) scaleY(1.1);
+  overflow-x: hidden;
+}
+
+.flowers.top.left {
+  transform: rotate(170deg) scaleX(-1.1) scaleY(1.1);
+}
+
+.flowers.bottom.right {
+  transform: rotate(-10deg);
+  overflow: hidden;
+}
+
+.flowers.bottom.left {
+  transform: rotate(10deg);
+  overflow: hidden;
+}
+
+.flower-row-bottom {
+  position: relative;
+  min-height: fit-content;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: #f5ece5;
+  margin-top: auto;
+  overflow: hidden;
 }
 
 .HeaderBox {
@@ -59,32 +95,36 @@
 }
 
 .Header {
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: column;
 }
 
 .HeaderButtons {
-  display: flex;
-  flex-direction: row;
-  width: 90%;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
+  /* display: flex; */
+
+  width: 95%;
+  display: table;
+  table-layout: fixed; /* align-items: center; */
+  height: 100%;
+
+  /* justify-content: center; */
+  /* align-self: center; */
 }
 
 .header-line {
-  display: block;
+  display: flex;
   height: 1px;
   border: 0;
   border-top: 3px solid #ccc;
   margin: 1em 0;
   width: 100%;
   margin-top: 6%;
+  align-self: center;
 }
 
 .weddingday-line {
-  display: block;
+  display: flex;
   height: 1px;
   border: 0;
   border-top: 1px solid #ccc;
@@ -92,55 +132,13 @@
   width: 100%;
 }
 
-.hamburger {
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  justify-content: space-around;
-  flex-flow: column nowrap;
-  z-index: 10;
-}
-
-.burger {
-  width: 2rem;
-  height: 0.25rem;
-  border-radius: 10px;
-  background-color: black;
-  transform-origin: 1px;
-  transition: all 0.3s linear;
-}
-
-.closed .burger1 {
-  transform: "rotate(0)";
-}
-
-.open .burger1 {
-  transform: "rotate(45deg)";
-}
-
-.open .burger2 {
-  transform: "translateX(100%)";
-  opacity: 0;
-}
-
-.closed .burger2 {
-  transform: "translateX(0)";
-  opacity: 1;
-}
-
-.open .burger3 {
-  transform: "rotate(-45deg)";
-}
-
-.closed .burger3 {
-  transform: "rotate(0)";
-}
-
 .MainPage {
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: #f5ece5;
+  display: flex;
+  flex-direction: column;
 }
 
 .PageBox {
@@ -208,31 +206,30 @@
   line-height: 0.8;
 }
 
-.MenuButton {
+.menu-button {
   flex: 1;
   font-size: medium;
   border-width: 0px;
   background-color: #f5ece5;
   font-family: "MALGUN";
+  margin: 2px;
 }
 
-.MenuButton-selected {
-  flex: 1;
-  background-color: #f5ece5;
-  font-size: medium;
-  border-width: 0px;
+.menu-button.selected {
   font-weight: bolder;
-  font-family: "MALGUN";
 }
 
-.MenuButton:hover {
+.menu-button:hover {
   background-color: #efe3db; /*#e7d9ce;  https://meyerweb.com/eric/tools/color-blend/#F5ECE5:E7D9CE:10:hex*/
   cursor: pointer;
 }
 
 .welcome-page {
   width: 50%;
-  height: 60%;
+}
+
+.welcome-page-mobile {
+  width: 95%;
 }
 
 .notice-page {
@@ -348,18 +345,38 @@
 .form-button {
   margin-top: 1%;
   margin-bottom: 3%;
+  background-color: #fdf4ed;
+  border-radius: 15px;
+  font-size: medium;
+  padding: 10px;
+}
+
+.form-button:hover {
+  background-color: #faf5f1;
+  cursor: pointer;
 }
 
 .button-disabled {
+  border-radius: 50%;
   background-color: #ffabab;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  border-radius: 10px;
+  font-size: medium;
 }
 
 .button-remove {
+  border-radius: 50%;
   background-color: #ff0000;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  border-radius: 10px;
+  font-size: medium;
 }
 
 .button-remove:hover {
   background-color: #ff5151;
+  cursor: pointer;
 }
 
 .weddingday-page {
@@ -368,6 +385,15 @@
   align-items: center;
   justify-content: center;
   width: 60%;
+  height: 60%;
+}
+
+.weddingday-page-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
   height: 60%;
 }
 
@@ -397,6 +423,22 @@
   height: 150px;
 }
 
+.toast-image {
+  display: flex;
+  margin-right: 1rem;
+  margin-top: 0px;
+  padding: 0px;
+  width: 250px;
+}
+
+.toast-image2 {
+  display: flex;
+  margin-right: 1rem;
+  margin-top: 0px;
+  padding: 0px;
+  width: 250px;
+  height: 250px;
+}
 .standard-header {
   font-weight: BOLD;
   margin: 0;
@@ -412,6 +454,10 @@
   font-family: "MALGUN";
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+.standard-text.bold {
+  font-weight: bolder;
 }
 
 .standard-text-no-margins {
@@ -509,7 +555,7 @@
 }
 
 .timeline {
-  width: 50%;
+  width: 75%;
   margin: 20px auto;
   position: relative;
 }
@@ -535,7 +581,7 @@
   clear: both;
 }
 .timeline .timeline-item .inner {
-  width: 40%;
+  width: 46%;
   float: left;
   margin: 5px 0 0 0;
   border-radius: 6px;
@@ -600,13 +646,16 @@
 
   -webkit-transform: rotate(-45deg);
 }
-.timeline .timeline-item .inner p {
-  padding: 15px;
-  margin: 0;
+.timeline-textbox {
+  padding-left: 10px;
+  padding-right: 10px;
+
   background: #f5ece5;
-  color: #656565;
-  border-radius: 0 0 6px 6px;
-  border: 1px solid rgb(192, 111, 34);
+  border-radius: 0 0 0px 0px;
+  border: 1px solid #c75600;
+  width: 50%;
+  display: flex;
+  align-items: center;
 }
 
 .timeline .timeline-item:nth-child(2n + 2) .inner {
@@ -662,14 +711,14 @@
 }
 
 .timeline-image {
-  width: 100%;
+  width: 50%;
   height: auto;
 }
 
 .burger-button {
   position: absolute;
-  top: 3%;
-  left: 2%;
+  top: 1%;
+  left: 1%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -747,4 +796,19 @@
 
 .third-closed {
   transform: rotate(0);
+}
+
+.same-line {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.contactpage-box {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 }

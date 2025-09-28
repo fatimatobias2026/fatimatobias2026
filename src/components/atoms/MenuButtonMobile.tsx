@@ -23,7 +23,7 @@ const Button = ({
     <button
       onClick={() => handleOnClick()}
       type={type}
-      className={pageValue === page ? "MenuButton-selected" : "MenuButton"}
+      className={pageValue === page ? "menu-button selected" : "menu-button"}
     >
       {label}
     </button>
