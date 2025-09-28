@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ab60d726.css",
-    "main.js": "/static/js/main.d4c71a38.js",
+    "main.css": "/static/css/main.a04bf209.css",
+    "main.js": "/static/js/main.cf49547c.js",
     "static/js/453.6b4a3355.chunk.js": "/static/js/453.6b4a3355.chunk.js",
     "static/media/MALGUNSL.TTF": "/static/media/MALGUNSL.21c0b3319ba53ed9ec5e.TTF",
     "static/media/lokalbild.png": "/static/media/lokalbild.aba6b6147ff1955b56a5.png",
@@ -13,7 +13,6 @@
     "static/media/timelinepic2.jpg": "/static/media/timelinepic2.f3f0d4f1eb03267fe4d6.jpg",
     "static/media/frontpage.jpg": "/static/media/frontpage.5b4ef5ff11618cf9f0ef.jpg",
     "static/media/timelinepic3.jpg": "/static/media/timelinepic3.385fe1bb7f9a058376ec.jpg",
-    "static/media/coolhalopicture.jpg": "/static/media/coolhalopicture.89c6f5cf3f364fa7ff87.jpg",
     "static/media/vigselbild.jpg": "/static/media/vigselbild.d94f8db6e2a146a88a12.jpg",
     "static/media/timelinepic6.jpg": "/static/media/timelinepic6.e743d4b58f0419bbd324.jpg",
     "static/media/toastmadame.jpg": "/static/media/toastmadame.a9f18b4ba4412faf8e41.jpg",
@@ -21,13 +20,14 @@
     "static/media/timelinepic4.jpg": "/static/media/timelinepic4.9786237c0a5641557c7b.jpg",
     "static/media/timelinepic1.jpg": "/static/media/timelinepic1.2a68b03d7337cdb2b994.jpg",
     "static/media/vigselfrttare.jpg": "/static/media/vigselfrttare.1fab28e83ea38fb51c7d.jpg",
+    "static/media/timelinepic7.jpg": "/static/media/timelinepic7.cf28f018e5ab56bf27b1.jpg",
     "index.html": "/index.html",
-    "main.ab60d726.css.map": "/static/css/main.ab60d726.css.map",
-    "main.d4c71a38.js.map": "/static/js/main.d4c71a38.js.map",
+    "main.a04bf209.css.map": "/static/css/main.a04bf209.css.map",
+    "main.cf49547c.js.map": "/static/js/main.cf49547c.js.map",
     "453.6b4a3355.chunk.js.map": "/static/js/453.6b4a3355.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab60d726.css",
-    "static/js/main.d4c71a38.js"
+    "static/css/main.a04bf209.css",
+    "static/js/main.cf49547c.js"
   ]
 }
