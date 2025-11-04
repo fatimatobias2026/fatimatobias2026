@@ -6,6 +6,8 @@ import Countdown from "./molecules/CountDown";
 import Header from "./molecules/Header/Header";
 import Page from "./organisms/Pages/Page";
 import Menu from "./atoms/Menu";
+import HeaderText from "./molecules/HeaderText/HeaderText";
+import HeaderLine from "./atoms/HeaderLine";
 const flowersLeft = require("../assets/pictures/blommor1.jpg");
 const flowersMiddle = require("../assets/pictures/blommor2.jpg");
 const flowersRight = require("../assets/pictures/blommor3.jpg");
@@ -28,6 +30,11 @@ const MainPage = () => {
             page={page}
           />
         </>
+      )}
+      {isMobile && (
+        <div className="mobile-header">
+          <HeaderText /> <HeaderLine />
+        </div>
       )}
       {!isMobile && (
         <div className="flower-and-header">

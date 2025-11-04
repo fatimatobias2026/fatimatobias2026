@@ -37,6 +37,7 @@ const InfoPage = ({ setPageValue }: InfoPageProps) => {
             <a href="https://boka.naasfabriker.se/campaign/campaign-details?channelId=cbdba692-5261-4370-819c-78ac6d95fb77&sessionId=059d31c1-615f-4461-87f8-e5a81f9c9641&campaignId=766a88c3-bec1-44a1-a269-c03f544a3662&langId=1&promoCode=FatimaTobias2026&currency=SEK">
               {text.linkword2}
             </a>
+            .
           </p>
           <p className="standard-text">{text.text4}</p>
         </div>
@@ -62,7 +63,7 @@ const InfoPage = ({ setPageValue }: InfoPageProps) => {
               onClick={() => setPageValue(6)}
               pageValue={6}
             />
-            {/* TODO: fix dot */}
+            .{/* TODO: fix dot */}
           </p>
         </div>
       </div>

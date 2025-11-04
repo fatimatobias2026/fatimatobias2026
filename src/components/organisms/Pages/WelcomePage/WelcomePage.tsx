@@ -13,11 +13,11 @@ const WelcomePage = ({ setPageValue }: WelcomePageProps) => {
 
   return (
     <div className={isMobile ? "welcome-page-mobile" : "welcome-page"}>
-      {!isMobile && (
-        <>
-          <img src={splashImg} />
-        </>
-      )}
+      <img
+        className={isMobile ? "picture-mobile welcome-page" : ""}
+        src={splashImg}
+      />
+
       <h1 className="page-top-header">{text.header}</h1>
       <p className="standard-text bold">{text.text8}</p>
       <p className="standard-text">{text.text1}</p>
@@ -30,6 +30,7 @@ const WelcomePage = ({ setPageValue }: WelcomePageProps) => {
           onClick={() => setPageValue(5)}
           pageValue={5}
         />
+        .
       </p>
       <p className="standard-text">
         {text.text5}
@@ -38,6 +39,7 @@ const WelcomePage = ({ setPageValue }: WelcomePageProps) => {
           onClick={() => setPageValue(7)}
           pageValue={7}
         />
+        .
       </p>
       <p className="standard-text">{text.text6}</p>
       <p className="standard-text">{text.text7}</p>

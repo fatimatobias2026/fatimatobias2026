@@ -11,6 +11,8 @@ type FormContentProps = {
   onChangeTransport: any;
   onChangeAllergies: any;
   onChangeIsDeleted: any;
+  onChangeOthers: any;
+
   id: number;
   isComing: string;
   forms: FormContentDto[];
@@ -26,6 +28,7 @@ const FormContent = ({
   onChangeSong,
   onChangeAllergies,
   onChangeTransport,
+  onChangeOthers,
 }: FormContentProps) => {
   const onChange = () => {
     onChangeIsDeleted(id, true);
@@ -97,11 +100,44 @@ const FormContent = ({
           </div>
 
           <div className="form-section">
-            <FormHeader text="Jag kommer ta bil och vill ta med mig fler bröllopsgäster eller skulle vilja samåka med någon som har bil." />
+            <div className="form-radiobuttons-section">
+              <FormHeader text="Transport" />
+              <div className="radiobuttons-box">
+                <FormRadioButtons
+                  id={id}
+                  label="Jag åker bil och kan ta med någon"
+                  value="Bil"
+                  onChangeValue={onChangeTransport}
+                  name={"transport" + id}
+                />
+              </div>
+              <div className="radiobuttons-box">
+                <FormRadioButtons
+                  id={id}
+                  label="Jag vill ha skjuts"
+                  value="Skjuts"
+                  onChangeValue={onChangeTransport}
+                  name={"transport" + id}
+                />
+              </div>
+              <div className="radiobuttons-box">
+                <FormRadioButtons
+                  id={id}
+                  label="Jag löser det 😎"
+                  value="Själv"
+                  onChangeValue={onChangeTransport}
+                  name={"transport" + id}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="form-section">
+            <FormHeader text="Övrigt" />
             <FormTextArea
               id={id}
-              name={"transport" + id}
-              onChangeValue={onChangeTransport}
+              name={"others" + id}
+              onChangeValue={onChangeOthers}
             />
           </div>
         </>

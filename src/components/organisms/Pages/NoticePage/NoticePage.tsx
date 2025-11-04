@@ -6,7 +6,7 @@ const NoticePage = () => {
   const isMobile = useIsMobile();
 
   return (
-    <div className="notice-page">
+    <div className={useIsMobile() ? "notice-page mobile" : "notice-page"}>
       <h1 className="page-top-header">{text.header}</h1>
       {isMobile && (
         <div>

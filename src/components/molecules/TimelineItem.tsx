@@ -11,10 +11,15 @@ const TimelineItem = ({
   imagePath,
   isLeft,
 }: TimelineItemProps) => (
-  <div className="timeline-item">
+  <div className="timeline-item ">
     <div className="inner">
       <div className="date"></div>
-      <h2>{header}</h2>
+      {!isLeft && <div className="timeline-box-to-circle-line right" />}
+      {isLeft && <div className="timeline-box-to-circle-line left" />}
+
+      <div className="timeline-header">
+        <h2 className="header-h2">{header}</h2>
+      </div>
       {isLeft ? (
         <div className="timeline-item-content">
           <img className="timeline-image" src={imagePath} />

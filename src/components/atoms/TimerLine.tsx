@@ -1,5 +1,13 @@
+import useIsMobile from "../../hooks/useIsMobile";
+
 const HeaderLine = () => {
-  return <div className="timer-line"></div>;
+  const isMobile = useIsMobile();
+
+  return (
+    <div
+      className={isMobile ? "timer-line mobile" : "timer-line desktop"}
+    ></div>
+  );
 };
 
 export default HeaderLine;

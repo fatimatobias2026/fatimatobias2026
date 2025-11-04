@@ -1,14 +1,27 @@
+import useIsMobile from "../../../hooks/useIsMobile";
 import text from "./text.json";
 
 const HeaderText = () => {
+  const isMobile = useIsMobile();
+
   return (
-    <div className="startText">
+    <div className="header-text">
       <div className="startText">
-        <p className="headertext-welcome">{text.welcome}</p>
+        <p
+          className={
+            isMobile ? "headertext welcome mobile" : "headertext welcome"
+          }
+        >
+          {text.welcome}
+        </p>
         <br />
-        <p className="headertext-name">{text.name}</p>
+        <p className={isMobile ? "headertext name mobile" : "headertext name"}>
+          {text.name}
+        </p>
         <br />
-        <p className="headertext-date">{text.date}</p>
+        <p className={isMobile ? "headertext date mobile" : "headertext date"}>
+          {text.date}
+        </p>
       </div>
     </div>
   );

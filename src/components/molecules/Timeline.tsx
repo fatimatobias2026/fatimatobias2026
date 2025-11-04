@@ -2,18 +2,18 @@ import TimelineItem from "./TimelineItem";
 
 const timelinepic6 = require("../../assets/pictures/timelinepic6.jpg");
 const timelinepic5 = require("../../assets/pictures/timelinepic5.jpg");
-const timelinepic4 = require("../../assets/pictures/timelinepic4.jpg");
+const timelinepic4 = require("../../assets/pictures/timelinepic8.jpg");
 const timelinepic3 = require("../../assets/pictures/timelinepic3.jpg");
 const timelinepic2 = require("../../assets/pictures/timelinepic2.jpg");
 const timelinepic1 = require("../../assets/pictures/timelinepic1.jpg");
-const timelinepic0 = require("../../assets/pictures/coolhalopicture.jpg");
+const timelinepic0 = require("../../assets/pictures/timelinepic7.jpg");
 
 const Timeline = () => {
   return (
     <div className="timeline">
       <TimelineItem
         text={
-          "Efter lite övertalning från Tobias följde Fatima med på en dejt vid Ölstugan Tullen Kvillebäcken en mörk och regnig tisdag i november. Det var passande då de båda var Hisingsbor. \n\n Det blev fler dejter, julmarknad på Liseberg, en vinterpicknick isnön på Slottsskogen och en långpromenad till Sillviks strand i Torslanda. Det var deras första vinter tillsammans. Det de inte visste då var att det skulle bli många fler vintrar tillsammans"
+          "Fatima och Tobias gick på sin första dejt på Ölstugan Tullen Kvillebäcken. Det blev fler dejter, bland annat en julmarknad på Liseberg, en vinterpicknick i snön på Slottsskogen och en långpromenad till Sillviks strand i Torslanda."
         }
         header={"November 2022"}
         imagePath={timelinepic6}
@@ -21,7 +21,7 @@ const Timeline = () => {
       />
       <TimelineItem
         text={
-          "Trots att Tobias vid denna tidpunkten bodde på samma gata som Fatimas mamma dröjde det några månader innan de introducerades på riktigt. Några veckor senare blev det även en tur till Tobias sommarstuga vid Nysockensjön där Fatima fick träffa hans föräldrar. \n\n Sommarsemestern avslutade Fatima och Tobias med en resa till vackra Österlen som bjöd på allt annat än sommarväder - endast regn och rusk."
+          "Tobias träffade för första gången Fatimas mamma, som bodde på samma gata som honom. Några veckor senare blev det en tur till Tobias sommarstuga där Fatima fick träffa Tobias föräldrar. Sommarsemestern avslutade Fatima och Tobias med en resa till Österlen."
         }
         header={"Sommaren 2023"}
         imagePath={timelinepic5}
@@ -29,7 +29,7 @@ const Timeline = () => {
       />
       <TimelineItem
         text={
-          "Fatima och Tobias började leva mer och mer i resväskor. Det dröjde inte länge förrän Tobias flyttade in hos Fatima."
+          "Fatima och Tobias började leva mer och mer i resväskor. Det dröjde inte länge förrän de flyttade ihop."
         }
         header={"Hösten 2023"}
         imagePath={timelinepic4}
@@ -45,7 +45,7 @@ const Timeline = () => {
       />
       <TimelineItem
         text={
-          "Tobias friar till Fatima på Carlton Hill i Edinburgh som bjöd på en vacker vårdag med utsikt över hela staden"
+          "Tobias friar till Fatima på Carlton Hill i Edinburgh som har vacker utsikt över hela staden."
         }
         header={"30 maj 2025"}
         imagePath={timelinepic2}

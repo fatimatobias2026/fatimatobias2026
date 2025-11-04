@@ -12,6 +12,7 @@ const NoticeForm = () => {
     allergies: string;
     song: string;
     transport: string;
+    others: string;
   }
 
   const handlePost = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -43,6 +44,7 @@ const NoticeForm = () => {
           allergies: "-",
           song: "-",
           transport: "-",
+          others: "-",
           sent: date.toLocaleString(),
         };
         Object.keys(inputValue).forEach((key) => {
@@ -56,7 +58,8 @@ const NoticeForm = () => {
         if (
           form.allergies === "" ||
           form.song === "" ||
-          form.transport === ""
+          form.transport === "" ||
+          form.others === ""
         ) {
           setMissedFields("Hoppsan, du verkar ha missat ett fält :)");
           allFieldsCorrect = false;
@@ -68,6 +71,7 @@ const NoticeForm = () => {
           allergies: form.allergies ?? "",
           song: form.song ?? "",
           transport: form.transport ?? "",
+          others: form.others ?? "",
           sent: date.toLocaleString(),
         };
 
@@ -116,6 +120,7 @@ const NoticeForm = () => {
       allergies: "",
       song: "",
       transport: "",
+      others: "",
     },
   ]);
 
@@ -130,6 +135,7 @@ const NoticeForm = () => {
         allergies: "",
         song: "",
         transport: "",
+        others: "",
       })
     );
   };
@@ -201,6 +207,17 @@ const NoticeForm = () => {
     });
   };
 
+  const onChangeOthers = (id: any, others: any) => {
+    setForms((form) => {
+      return form.map((item) => {
+        if (item.id === id) {
+          return { ...item, others };
+        }
+        return item;
+      });
+    });
+  };
+
   const isMobile = useIsMobile();
 
   return (
@@ -230,14 +247,19 @@ const NoticeForm = () => {
                       onChangeAllergies={onChangeAllergies}
                       onChangeSong={onChangeSong}
                       onChangeTransport={onChangeTransport}
+                      onChangeOthers={onChangeOthers}
                     />
                   );
                 })}
 
-              <button type="button" onClick={todo} className="form-button">
+              <button
+                type="button"
+                onClick={todo}
+                className="form-button add-person"
+              >
                 +Lägg till person
               </button>
-              <button type="submit" className="form-button">
+              <button type="submit" className="form-button submit">
                 Svara
               </button>
               {missedFields != "" && (
